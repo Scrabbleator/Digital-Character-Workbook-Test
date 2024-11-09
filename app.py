@@ -15,3 +15,11 @@ basic_profile_section()
 # Display Diamond of Human Character Section
 st.header("Diamond of Human Character")
 diamond_character_section()
+
+# Display Character Evaluation Section
+st.header("Character Evaluation")
+character_evaluation_section()
+
+# Display Fruits and Spoils Section
+st.header("Fruits and Spoils")
+fruits_spoils_section()
