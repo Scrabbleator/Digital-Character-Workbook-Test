@@ -3,25 +3,26 @@ import streamlit as st
 def character_evaluation_section():
     st.subheader("Character Evaluation")
 
-    # MBTI Tool
-    st.write("**MBTI Type Selection**")
-    mbti_type = st.selectbox("Select MBTI Type", ["INFJ", "ESTP", "ISFJ", "ENTJ", "Other"])
+    # MBTI Type Selection
+    st.write("**MBTI Trait Selection**")
 
-    # Relationships Table
-    st.write("**Key Relationships**")
-    with st.expander("Add Relationship"):
-        name = st.text_input("Name of Relation")
-        impact = st.text_area("Impact on Character")
-        if st.button("Add Relationship"):
-            st.write(f"Added: {name} - {impact}")
+    # Extraversion vs. Introversion
+    ei_trait = st.selectbox("Extraversion (E) or Introversion (I)?", ["E", "I"])
+    # Sensing vs. Intuition
+    sn_trait = st.selectbox("Sensing (S) or Intuition (N)?", ["S", "N"])
+    # Thinking vs. Feeling
+    tf_trait = st.selectbox("Thinking (T) or Feeling (F)?", ["T", "F"])
+    # Judging vs. Perceiving
+    jp_trait = st.selectbox("Judging (J) or Perceiving (P)?", ["J", "P"])
 
-    # Growth Tracker
-    st.write("**Growth Milestones**")
-    growth_milestone = st.text_area("Describe a growth moment for your character.")
-    st.write("Growth milestones will display here as they are added.")
+    # Determine the MBTI type
+    mbti_type = ei_trait + sn_trait + tf_trait + jp_trait
+    st.write(f"**Determined MBTI Type**: {mbti_type}")
 
-    # Contrasts in Character
-    st.write("**Contrasting Elements**")
-    contrast_pos = st.text_input("Positive Trait")
-    contrast_neg = st.text_input("Contrasting Negative Trait")
-    st.write(f"Contrasts: {contrast_pos} vs. {contrast_neg}")
+    # MBTI Profile Summary
+    st.write("**MBTI Profile Summary**")
+    if mbti_type == "INFJ":
+        st.write("INFJ: Insightful, idealistic, and driven by deep convictions.")
+    elif mbti_type == "ESTP":
+        st.write("ESTP: Bold, practical, and action-oriented.")
+    # Add similar summaries for other types as needed
