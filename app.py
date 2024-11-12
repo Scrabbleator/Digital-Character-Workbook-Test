@@ -2,7 +2,7 @@ import streamlit as st
 from basic_profile import basic_profile_section
 from diamond_character import diamond_character_section
 from character_evaluation import character_evaluation_section
-# from biblical_mirror import biblical_mirror_section  # Commented out for now
+from biblical_mirror import biblical_mirror_section
 from fruits_spoils import fruits_spoils_section
 from inner_light import inner_light_section
 
@@ -21,6 +21,10 @@ diamond_character_section()
 # Display Character Evaluation Section
 st.header("Character Evaluation")
 character_evaluation_section()
+
+# Display Biblical Mirror Section
+st.header("Biblical Mirror")
+biblical_mirror_section()
 
 # Display Fruits and Spoils Section
 st.header("Fruits and Spoils")
