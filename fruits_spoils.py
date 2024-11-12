@@ -3,18 +3,30 @@ import streamlit as st
 def fruits_spoils_section():
     st.subheader("Fruits and Spoils")
 
-    # Positive Traits (Fruits)
-    st.write("**Positive Traits (Fruits)**")
-    positive_trait = st.text_area("List a positive trait and describe its impact on the character’s journey.")
-    positive_impact = st.slider("How strong is the impact of this positive trait?", 1, 5)  # Updated label
-    st.write(f"Positive Trait: {positive_trait} | Impact Level: {positive_impact}")
+    # Define pairs of traits for Fruits of the Spirit and Spoils (Negative Traits)
+    traits = {
+        "Love": "Hatred",
+        "Joy": "Despair",
+        "Peace": "Conflict",
+        "Patience": "Impatience",
+        "Kindness": "Cruelty",
+        "Goodness": "Corruption",
+        "Faithfulness": "Faithlessness",
+        "Gentleness": "Harshness",
+        "Self-control": "Recklessness"
+    }
 
-    # Negative Traits (Spoils)
-    st.write("**Negative Traits (Spoils)**")
-    negative_trait = st.text_area("List a negative trait and describe its impact on the character’s journey.")
-    negative_impact = st.slider("How strong is the impact of this negative trait?", 1, 5)  # Updated label
-    st.write(f"Negative Trait: {negative_trait} | Impact Level: {negative_impact}")
+    # Display each pair with a slider
+    for fruit, spoil in traits.items():
+        st.write(f"**{fruit} vs. {spoil}**")
+        leaning = st.slider(f"Lean towards {fruit} or {spoil}", -5, 5, 0)
+        if leaning > 0:
+            st.write(f"Leaning towards: {fruit} (+{leaning})")
+        elif leaning < 0:
+            st.write(f"Leaning towards: {spoil} ({leaning})")
+        else:
+            st.write("Balanced between both traits")
 
-    # Summary Reflection
-    st.write("**Reflection**")
-    reflection = st.text_area("Reflect on how the balance of positive and negative traits influences the character’s development.")
+    # Reflection Summary
+    st.write("**Reflection on Character's Moral Balance**")
+    reflection = st.text_area("Reflect on how these traits shape your character's overall moral and ethical balance.")
