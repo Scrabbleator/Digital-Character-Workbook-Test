@@ -93,3 +93,4 @@ def biblical_mirror_section():
     else:
         st.write("No Biblical figure found for this MBTI type.")
 
+
