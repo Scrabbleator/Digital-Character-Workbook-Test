@@ -6,6 +6,7 @@ from character_evaluation import character_evaluation_section
 from fruits_spoils import fruits_spoils_section
 from inner_light import inner_light_section
 
+# Main Title and Introduction
 st.title("Digital Character Workbook Test")
 st.write("This is a basic test to ensure Streamlit is working correctly.")
 
