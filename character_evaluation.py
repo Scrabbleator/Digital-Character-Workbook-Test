@@ -1,10 +1,9 @@
-
 import streamlit as st
 
 def character_evaluation_section():
     st.subheader("Character Evaluation")
 
-    # MBTI Type Selection
+    # MBTI Trait Selection
     st.write("**MBTI Trait Selection**")
 
     # Extraversion vs. Introversion
